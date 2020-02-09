@@ -17,21 +17,25 @@ app.engine('hbs', hbs.engine)
 app.set('view engine', 'hbs')
 app.set('views','views')
 
-app.use(express.static('public'))
+
+// hbs.renderView(path.join(__dirname, '.views'))
+// app.use(express.static('public'))
+// hbs.registerPartials(path.join(__dirname, "../", "./views/partials"));
+app.use(express.static(path.join(__dirname , "../" , "./public", "../views/partials")));
 app.use(express.urlencoded({extended:true}))
 
-app.use('/routs',homeRoutes)
+app.use('/home',homeRoutes)
 app.use('/ping',pingRoutes)
 
 
 
-app.get('/',(req,res)=>{
-    res.render('home')
-})
+// app.get('/',(req,res)=>{
+//     res.render('home')
+// })
 
-app.get('/ping',(req,res)=>{
-    res.render('ping')
-})
+// app.get('/ping',(req,res)=>{
+//     res.render('ping')
+// })
 
 // app.get('/',(req,res)=>{
 //     res.sendFile(path.join(__dirname,'views','index.hbs'))
