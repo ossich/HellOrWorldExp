@@ -25,6 +25,14 @@ app.use('/ping',pingRoutes)
 
 
 
+app.get('/',(req,res)=>{
+    res.render('home')
+})
+
+app.get('/ping',(req,res)=>{
+    res.render('ping')
+})
+
 // app.get('/',(req,res)=>{
 //     res.sendFile(path.join(__dirname,'views','index.hbs'))
 // })
