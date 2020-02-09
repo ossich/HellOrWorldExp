@@ -21,6 +21,7 @@ app.set('views','views')
 // hbs.renderView(path.join(__dirname, '.views'))
 // app.use(express.static('public'))
 // hbs.registerPartials(path.join(__dirname, "../", "./views/partials"));
+
 app.use(express.static(path.join(__dirname , "../" , "./public", "../views/partials")));
 app.use(express.urlencoded({extended:true}))
 
@@ -28,6 +29,14 @@ app.use('/home',homeRoutes)
 app.use('/ping',pingRoutes)
 
 
+// redirect 2 home:
+const targetBaseUrl = '/home';
+function handleRedirect(req, res) {
+  const targetUrl = targetBaseUrl + req.originalUrl;
+  res.redirect(targetUrl);
+}
+app.get('*', handleRedirect);
+// -----
 
 // app.get('/',(req,res)=>{
 //     res.render('home')
