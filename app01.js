@@ -3,11 +3,11 @@ const http = require('http');
 const server = http.createServer((req,res) => {
 
     if (req.url === '/') {
-        res.write('Hello World!');
+        res.write(JSON.stringify(['Hello', 'World!']));
         res.end;
     }
 
-    if (res.url === '/api') {
+    if (req.url === '/api') {
         res.write(JSON.stringify([1,2,3]));
         res.end;
     }
