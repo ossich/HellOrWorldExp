@@ -2,10 +2,10 @@
   "name": "hw",
   "version": "1.0.0",
   "description": "[![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/ossich/hw)",
-  "main": "index.js",
+  "main": "app02.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js"
+    "start": "node app02.js",
+    "dev": "nodemon app02.js"
   },
   "repository": {
     "type": "git",
